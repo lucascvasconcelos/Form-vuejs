@@ -98,63 +98,32 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="form-label">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Como nos conheceu?</font>
-                            </font>
-                        </label>
-                        <select name="beast" id="select-beast" class="form-control custom-select selectized"
-                            tabindex="-1" style="display: none;">
-                            <option value="" selected="selected"></option>
-                        </select>
-                        <div class="selectize-control form-control custom-select single">
-                            <div class="selectize-input items has-options not-full"><input type="text"
-                                    autocomplete="off" tabindex="" id="select-beast-selectized"
-                                    style="width: 4px; opacity: 1; position: relative; left: 0px;"></div>
-                            <div class="selectize-dropdown single form-control custom-select"
-                                style="display: none; visibility: visible; width: 256px; top: 38px; left: 0px;">
-                                <div class="selectize-dropdown-content">
-                                    <div class="option selected" v-model="conheceu" data-selectable="" data-value="1">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Google</font>
-                                        </font>
-                                    </div>
-                                    <div class="option" v-model="conheceu" data-selectable="" data-value="4">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">Revista</font>
-                                        </font>
-                                    </div>
-                                    <div class="option" v-model="conheceu" data-selectable="" data-value="3">
-                                        <font style="vertical-align: inherit;">
-                                            <font style="vertical-align: inherit;">TV</font>
-                                        </font>
-                                    </div>
-                                </div>
+                            <div class="form-label">
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Como nos conheceu?</font>
+                                </font>
                             </div>
-                        </div>
-                    </div>
-
-                    <label for="">Como nos conheceu?</label><br>
-                    <select name="" id="" v-model="conheceu">
+                    <select class="form-control" name="" id="" v-model="conheceu">
                         <option value="">Escolha</option>
                         <option value="Google">Google</option>
                         <option value="TV">TV</option>
-                        <option value="Recista">Revista</option>
+                        <option value="Revista">Revista</option>
                     </select>
+                    <br><br>
+                    <button>ENVIAR</button>
+
+                    <br>
+
+                    Nome: {{ nome }} <br>
+                    Telefone: {{ telefone }} <br>
+                    Novidades: {{ novidades }} <br>
+                    Interesses: {{ interesses }} <br>
+                    Como nos conheceu? {{ conheceu }} <br>
                 </div>
             </div>
         </form>
         <br><br>
 
-        <button>ENVIAR</button>
-
-        <br>
-
-        Nome: {{ nome }} <br>
-        Telefone: {{ telefone }} <br>
-        Novidades: {{ novidades }} <br>
-        Interesses: {{ interesses }} <br>
-        Como nos conheceu? {{ conheceu }} <br>
 
     </div>
 

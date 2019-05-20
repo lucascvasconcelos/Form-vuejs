@@ -1,42 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vuejs</title>
+    <link rel="stylesheet" href="tabler/tabler-gh-pages/assets/css/tabler.css">
+    <link rel="stylesheet" href="tabler/tabler-gh-pages/assets/css/dashboard.css">
 </head>
+
 <body>
-
     <div id="app">
-        <h1>{{ titulo }}</h1>
-        <label for="">Nome</label><br>
-        <input type="text" v-model="nome">
+        <form action="https://httpbin.org/post" method="post">
+            <div class="card-body">
+                <div class="col-md-6 col-lg-4">
+                    <div class="form-group">
+                        <h1>{{ titulo }}</h1>
+                        <label class="form-label" for="">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Nome</font>
+                            </font>
+                        </label><br>
+                        <input type="text" class="form-control" v-model="nome">
+                    </div>
 
-        <br><br>
-        <label for="">Telefone</label><br>
-        <input type="text" v-model="telefone">
+                    <div class="form-group">
+                        <label class="form-label" for="">Telefone</label><br>
+                        <input type="text" class="form-control" v-model="telefone">
+                    </div>
 
-        <br><br>
-        <label for="">Deseja receber novidades?</label><br>
-        <input type="radio" value="Sim" name="" id="" v-model="novidades"> Sim
-        <input type="radio" value="Não" id="" v-model="novidades"> Não
-        
-        <br><br>
-        <label for="">Interesses</label><br>
-        <input type="checkbox" value="Futebol" name="" id="" v-model="interesses"> Futebol
-        <input type="checkbox" value="Formula 1" name="" id="" v-model="interesses"> Formula 1
-        <input type="checkbox" value="Corrida" id="" v-model="interesses"> Corrida
+                    <div class="form-group">
+                        <div class="form-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">
+                                    Receber novidades?
+                                </font>
+                            </font>
+                        </div>
+                        <div class="custom-controls-stacked">
+                            <label class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="example-radios" value="Sim"
+                                    checked="" v-model="novidades">
+                                <div class="custom-control-label">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Sim</font>
+                                    </font>
+                                </div>
+                            </label>
+                            <label class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" name="example-radios" value="Não"
+                                    v-model="novidades">
+                                <div class="custom-control-label">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Não</font>
+                                    </font>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
 
-        <br><br>
-        <label for="">Como nos conheceu?</label><br>
-        <select name="" id="" v-model="conheceu">
-            <option value="">Escolha</option>
-            <option value="Google">Google</option>
-            <option value="TV">TV</option>
-            <option value="Recista">Revista</option>
-        </select>
+                    <div class="form-group">
+                        <div class="form-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Interesses</font>
+                            </font>
+                        </div>
+                        <div>
+                            <label class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" class="custom-control-input" name="example-inline-checkbox1"
+                                    value="Futebol" v-model="interesses" checked="">
+                                <span class="custom-control-label">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Futebol</font>
+                                    </font>
+                                </span>
+                            </label>
+                            <label class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" class="custom-control-input" name="example-inline-checkbox2"
+                                    value="Formula 1" v-model="interesses">
+                                <span class="custom-control-label">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Formula 1</font>
+                                    </font>
+                                </span>
+                            </label>
+                            <label class="custom-control custom-checkbox custom-control-inline">
+                                <input type="checkbox" class="custom-control-input" name="example-inline-checkbox3"
+                                    value="Corrida" v-model="interesses">
+                                <span class="custom-control-label">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">Corrida</font>
+                                    </font>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
 
+                    <div class="form-group">
+                        <label class="form-label">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Como nos conheceu?</font>
+                            </font>
+                        </label>
+                        <select name="beast" id="select-beast" class="form-control custom-select selectized"
+                            tabindex="-1" style="display: none;">
+                            <option value="" selected="selected"></option>
+                        </select>
+                        <div class="selectize-control form-control custom-select single">
+                            <div class="selectize-input items has-options not-full"><input type="text"
+                                    autocomplete="off" tabindex="" id="select-beast-selectized"
+                                    style="width: 4px; opacity: 1; position: relative; left: 0px;"></div>
+                            <div class="selectize-dropdown single form-control custom-select"
+                                style="display: none; visibility: visible; width: 256px; top: 38px; left: 0px;">
+                                <div class="selectize-dropdown-content">
+                                    <div class="option selected" v-model="conheceu" data-selectable="" data-value="1">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Google</font>
+                                        </font>
+                                    </div>
+                                    <div class="option" v-model="conheceu" data-selectable="" data-value="4">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">Revista</font>
+                                        </font>
+                                    </div>
+                                    <div class="option" v-model="conheceu" data-selectable="" data-value="3">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">TV</font>
+                                        </font>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <label for="">Como nos conheceu?</label><br>
+                    <select name="" id="" v-model="conheceu">
+                        <option value="">Escolha</option>
+                        <option value="Google">Google</option>
+                        <option value="TV">TV</option>
+                        <option value="Recista">Revista</option>
+                    </select>
+                </div>
+            </div>
+        </form>
         <br><br>
 
         <button>ENVIAR</button>
@@ -48,7 +155,7 @@
         Novidades: {{ novidades }} <br>
         Interesses: {{ interesses }} <br>
         Como nos conheceu? {{ conheceu }} <br>
-        
+
     </div>
 
 
@@ -61,6 +168,7 @@
                     titulo: "Exemplo de form com vue js",
                     nome: "",
                     telefone: "",
+                    novidades: "",
                     interesses: [],
                     conheceu: "",
                 }
@@ -68,4 +176,5 @@
         })
     </script>
 </body>
+
 </html>

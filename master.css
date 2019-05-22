@@ -1,0 +1,8 @@
+.topo{
+    background-image: url('vuejs.png');
+}
+
+.card-body{
+    display: flex;
+    justify-content: center;
+}

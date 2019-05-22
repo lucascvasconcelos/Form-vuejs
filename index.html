@@ -8,9 +8,11 @@
     <title>Vuejs</title>
     <link rel="stylesheet" href="tabler/tabler-gh-pages/assets/css/tabler.css">
     <link rel="stylesheet" href="tabler/tabler-gh-pages/assets/css/dashboard.css">
+    <link rel="stylesheet" href="master.css">
 </head>
 
 <body>
+    <header class="topo">
     <div id="app">
         <form action="https://httpbin.org/post" method="post">
             <div class="card-body">
@@ -18,9 +20,7 @@
                     <div class="form-group">
                         <h1>{{ titulo }}</h1>
                         <label class="form-label" for="">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Nome</font>
-                            </font>
+                            Nome
                         </label><br>
                         <input type="text" class="form-control" v-model="nome">
                     </div>
@@ -32,29 +32,21 @@
 
                     <div class="form-group">
                         <div class="form-label">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">
-                                    Receber novidades?
-                                </font>
-                            </font>
+                            Receber novidades?
                         </div>
                         <div class="custom-controls-stacked">
                             <label class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" name="example-radios" value="Sim"
                                     checked="" v-model="novidades">
                                 <div class="custom-control-label">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Sim</font>
-                                    </font>
+                                    Sim
                                 </div>
                             </label>
                             <label class="custom-control custom-radio">
                                 <input type="radio" class="custom-control-input" name="example-radios" value="Não"
                                     v-model="novidades">
                                 <div class="custom-control-label">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Não</font>
-                                    </font>
+                                    Não
                                 </div>
                             </label>
                         </div>
@@ -62,36 +54,28 @@
 
                     <div class="form-group">
                         <div class="form-label">
-                            <font style="vertical-align: inherit;">
-                                <font style="vertical-align: inherit;">Interesses</font>
-                            </font>
+                            Interesses
                         </div>
                         <div>
                             <label class="custom-control custom-checkbox custom-control-inline">
                                 <input type="checkbox" class="custom-control-input" name="example-inline-checkbox1"
                                     value="Futebol" v-model="interesses" checked="">
                                 <span class="custom-control-label">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Futebol</font>
-                                    </font>
+                                    Futebol
                                 </span>
                             </label>
                             <label class="custom-control custom-checkbox custom-control-inline">
                                 <input type="checkbox" class="custom-control-input" name="example-inline-checkbox2"
                                     value="Formula 1" v-model="interesses">
                                 <span class="custom-control-label">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Formula 1</font>
-                                    </font>
+                                    Formula 1
                                 </span>
                             </label>
                             <label class="custom-control custom-checkbox custom-control-inline">
                                 <input type="checkbox" class="custom-control-input" name="example-inline-checkbox3"
                                     value="Corrida" v-model="interesses">
                                 <span class="custom-control-label">
-                                    <font style="vertical-align: inherit;">
-                                        <font style="vertical-align: inherit;">Corrida</font>
-                                    </font>
+                                    Corrida
                                 </span>
                             </label>
                         </div>
@@ -99,9 +83,7 @@
 
                     <div class="form-group">
                             <div class="form-label">
-                                <font style="vertical-align: inherit;">
-                                    <font style="vertical-align: inherit;">Como nos conheceu?</font>
-                                </font>
+                                Como nos conheceu?
                             </div>
                     <select class="form-control" name="" id="" v-model="conheceu">
                         <option value="">Escolha</option>
@@ -110,7 +92,9 @@
                         <option value="Revista">Revista</option>
                     </select>
                     <br><br>
-                    <button>ENVIAR</button>
+                    
+                    <a href="#" class="btn btn-primary" role="button">Submit</a>
+
 
                     <br>
 
@@ -126,7 +110,7 @@
 
 
     </div>
-
+</header>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
